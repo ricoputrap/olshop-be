@@ -1,5 +1,6 @@
 import { Router } from "express";
 import Test from "../src/controller/Test";
+import { ProductRouter } from "../src/domains/product/controller";
 
 export type TRoute = {
   path: string;
@@ -7,7 +8,8 @@ export type TRoute = {
 }
 
 const routes: TRoute[] = [
-  { path: "/test", router: Test() }
+  { path: "/test", router: Test() },
+  { path: "/v1/products", router: ProductRouter() }
 ]
 
 export default routes;
