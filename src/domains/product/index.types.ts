@@ -1,28 +1,20 @@
-interface ProductItemResponse {
+export interface ProductItemResponse {
   id: string;
   name: string;
   price: number;
 
-  category: {
-    id: string;
-    
-  };
-  shop: {
-    id: string;
-    name: string;
-    location: string;
-  };
-  images: {
-    id: string;
+  // category: {
+  //   id: string;
+  // };
+  // shop: {
+  //   id: string;
+  //   name: string;
+  //   location: string;
+  // };
+  image: {
+    label: string;
     url: string;
-  }[];
-}
-
-export type ProductImage = {
-  id: string;
-  label: string;
-  url: string;
-  order: number;
+  };
 }
 
 export type ProductItem = {
@@ -32,4 +24,6 @@ export type ProductItem = {
   price: number;
   stock: number;
   created_at?: string;
+  category_id: string;
+  shop_id: string;
 }

@@ -1,23 +1,7 @@
-import supabase from "../../../clients/supabase";
+import { ProductItem } from "../index.types";
 
-class ProductRepository {
-  public async getAll(): Promise<any[]> {
-    try {
-      const { data, error } = await supabase
-        .from('PRODUCT')
-        .select('*');
-
-      if (error) throw error;
-      if (data == null)
-        return [];
-
-      return data;
-    }
-    catch (error: any) {
-      const message = (error as Error).message;
-      throw message;
-    }
-  }
+interface ProductRepository {
+  getAll(): Promise<ProductItem[]>;
 }
 
 export default ProductRepository;
